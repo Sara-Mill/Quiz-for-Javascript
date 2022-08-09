@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick-quiz - Play</title>
+  <link rel = "stylesheet" href="style.css" />
+  <link rel = "stylesheet" href ="game.css" />
+</head>
+<body>   
+  <div class="container">
+    <div id="game" class ="justify-center, flex-column">
+      <!--sets up heads up display(hud): gives info about game as you're playing, what question you're on, and score.  at top of game-->
+        <div id="hud">
+          <div id ="hud-item">
+            <a class = "btn" id = "highScoresButton" href = "highscores.html">High Scores</a>
+              View High Scores
+            </p>
+          </div>
+          <div id ="countdown">
+            
+            <h1 id = "countdown">Time:
+              
+            </h1>
+          </div>
+      </div>
+      <h2 id = "question"> What is the Answer to this Question?</h2>
+      <div class="choice-container">
+      
+        <!-- Gives custom attribute-->
+        <p class="choice-text" data-number = "1">Choice 1</p>
+      </div>
+      <div class="choice-container">
+        <p class="choice-text" data-number = "2">Choice 2</p>
+      </div>
+      <div class="choice-container">
+        <p class="choice-text" data-number = "3">Choice 3</p>
+      </div>
+      <div class="choice-container">
+        <p class="choice-text" data-number = "4">Choice 4</p>
+      </div>
+
+    </div>
+  </div>
+  <script src ="game.js"></script>
+</body>
+</html>
