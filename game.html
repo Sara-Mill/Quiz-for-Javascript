@@ -11,15 +11,14 @@
 <body>   
   <div class="container">
     <div id="game" class ="justify-center, flex-column">
-      <!--sets up heads up display(hud): gives info about game as you're playing, what question you're on, and score.  at top of game-->
+      <!--sets up heads up display(hud): gives info about game as you're playing, how much time is left.  at top of game-->
         <div id="hud">
           <div id ="hud-item">
-            <a class = "btn" id = "highScoresButton" href = "highscores.html">High Scores</a>
-              View High Scores
-            </p>
+            <a class = "btn" id = "highScoresButton" href = "highscores.html">View high scores</a>
           </div>
           <div id ="countdown">
-            
+            <div id = "incorrect"></div>
+            <div id = "correct"></div>
             <h1 id = "countdown">Time:
               
             </h1>
@@ -45,4 +44,5 @@
   </div>
   <script src ="game.js"></script>
 </body>
+<footer> The question is wrong or correct</footer>
 </html>

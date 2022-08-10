@@ -3,12 +3,15 @@ var question = document.getElementById("question");
 var choices = Array.from(document.getElementsByClassName("choice-text"));
 var questionCounterText = document.getElementById('questionCounter');
 var scoreText = document.getElementById('score');
+var incorrect = ("incorrect");
+var correct = ("correct");
 //create variables (object)
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
+
 //timer for quiz
-var timeLeft = 75;
+var timeLeft = 60;
 var downloadTimer = setInterval(function() {
   if(timeLeft <= 0) {
     clearInterval(downloadTimer);
@@ -19,6 +22,12 @@ var downloadTimer = setInterval(function() {
   }
   timeLeft -=1;
 }, 1000);
+  // decrements time by 10 seconds if user answers incorrectly
+  document.getElementById('incorrect').addEventListener('click', function () {
+  timeLeft -= 10;
+  document.getElementById('timeLeft').innerHTML='00:' + timeLeft;
+});
+
 //full question set minus  used questions
 let availableQuestions = [];
 
@@ -116,14 +125,15 @@ choices.forEach(choice => {
     var classToApply = "incorrect";
      //since we are comparing a number to a string, we use == not strict ===
     if(selectedAnswer == currentQuestion.answer) {
-      classToApply = 'correct'
+      classToApply = 'correct' 
+      window.alert("Correct!")
+    } else {
+      window.alert("Wrong!")
     };
     
-      
    //apply the class
    selectedChoice.parentElement.classList.add(classToApply);
-    
-   
+  
    //remove the class ( we want the class to be there just long enough to show the color and move on; we use the callback function 'setTimeOut' for 1 second)
     setTimeout( () => {
       selectedChoice.parentElement.classList.remove(classToApply);

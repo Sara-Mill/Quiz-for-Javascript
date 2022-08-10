@@ -1,5 +1,12 @@
 var username  = document.getElementById("username");
 var saveScoreBtn = document.getElementById('saveScoreBtn');
+var score = 0;
+var highScore = 0;
+localStorage.setItem("highScore",0);
+
+
+if (score > parseInt(localStorage.getItem("highScore"),5))
+localStorage.setItem("highScore", score);
 
 var finalScore = document.getElementById('finalScore');
 //saves most recent score in local storage
@@ -11,7 +18,7 @@ console.log(highScores)
 
 var MAX_HIGH_SCORES = 3;
 
-finalScore.innerText = mostRecentScore;
+//finalScore.innerText = mostRecentScore;
 
 username.addEventListener("keyup", () => {
   // if nothing typed in username form, button is disabled, if there is something there, this will enable the submit (save) button
