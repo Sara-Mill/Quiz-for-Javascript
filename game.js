@@ -126,11 +126,10 @@ choices.forEach(choice => {
      //since we are comparing a number to a string, we use == not strict ===
     if(selectedAnswer == currentQuestion.answer) {
       classToApply = 'correct' 
-      window.alert("Correct!")
-    } else {
-      window.alert("Wrong!")
-    };
-    
+    }
+    if(classToApply==="correct") {
+      incrementScore(CORRECT_BONUS);
+    }
    //apply the class
    selectedChoice.parentElement.classList.add(classToApply);
   
@@ -142,5 +141,8 @@ choices.forEach(choice => {
   });
 });
 
-
+incrementScore = num => {
+score +=num;
+scoreText.innerText = score;
+};
 startGame();

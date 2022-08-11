@@ -11,10 +11,17 @@
 <body>   
   <div class="container">
     <div id="game" class ="justify-center, flex-column">
-      <!--sets up heads up display(hud): gives info about game as you're playing, how much time is left.  at top of game-->
+      <!--sets up heads up display(hud): gives info about game as you're playing, how much time is left, and score  at top of game-->
         <div id="hud">
           <div id ="hud-item">
             <a class = "btn" id = "highScoresButton" href = "highscores.html">View high scores</a>
+          </div>
+          <div id ="hud-item">
+            <p class = "hud-prefix">
+              Score </p>
+              <h1 class = "hud-main-text" id = "score">
+                0
+              </h1>
           </div>
           <div id ="countdown">
             <div id = "incorrect"></div>
