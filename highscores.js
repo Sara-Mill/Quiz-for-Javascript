@@ -10,6 +10,5 @@ highScoresList.innerHTML = highScores
 highScores.map(score => {
   console.log(score.name, score.mostRecentScore);
   return(score.name, score.mostRecentScore);
-})
+}).join('');
 
-  .join("");
