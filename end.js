@@ -23,7 +23,7 @@ var score = {
 highScores.push(score);
 console.log(highScores);
 
-localStorage.setItem("highScoresList", JSON.stringify(highScoresList));
+localStorage.setItem("highScore", JSON.stringify(highScore));
 window.location.assign("highscores.html");
 return
 };
