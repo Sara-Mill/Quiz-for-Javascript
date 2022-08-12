@@ -1,5 +1,7 @@
 This is a Javascript Quiz Game.
 
+It can be found live here: https://sara-mill.github.io/Quiz-for-Javascript/
+
 ![Screenshot of white background and purple start button](https://github.com/Sara-Mill/Quiz-for-Javascript/blob/main/Coding%20quiz%20screenshot.png)
 
 It asks the user to press start at which point user is taken to a series of qustions, and a timer starts. 
