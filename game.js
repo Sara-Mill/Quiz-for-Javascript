@@ -5,13 +5,14 @@ var questionCounterText = document.getElementById('questionCounter');
 var scoreText = document.getElementById('score');
 var incorrect = ("incorrect");
 var correct = ("correct");
+var decrementTimeLeft = ("decrementTimeLeft")
 //create variables (object)
-let currentQuestion = {};
-let acceptingAnswers = true;
-let score = 0;
+var currentQuestion = {};
+var acceptingAnswers = true;
+var score = 0;
 
 //timer for quiz
-var timeLeft = 60;
+var timeLeft = 75;
 var downloadTimer = setInterval(function() {
   if(timeLeft <= 0) {
     clearInterval(downloadTimer);
@@ -21,12 +22,13 @@ var downloadTimer = setInterval(function() {
     document.getElementById("countdown").innerHTML = timeLeft + " seconds remaining";
   }
   timeLeft -=1;
-}, 1000);
+
   // decrements time by 10 seconds if user answers incorrectly
-  document.getElementById('incorrect').addEventListener('click', function () {
-  timeLeft -= 10;
+  document.getElementById('countdown').addEventListener('click', function () {
+  timeLeft -=10;
   document.getElementById('timeLeft').innerHTML='00:' + timeLeft;
 });
+}, 1000);
 
 //full question set minus  used questions
 let availableQuestions = [];
@@ -89,7 +91,7 @@ startGame = () => {
 //use arrow syntax for a more concise way to write a function
 getNewQuestion = () => {
   //when user goes through all assigned questions
-  if(availableQuestions.length === 0 || questionCounter >=MAX_QUESTIONS) {
+  if(availableQuestions.length === 0 || questionCounter >=MAX_QUESTIONS || timeLeft < 0) {
     localStorage.setItem('mostRecentScore', score);
     //go to the end of page
     return window.location.assign("end.html");
@@ -129,6 +131,8 @@ choices.forEach(choice => {
     }
     if(classToApply==="correct") {
       incrementScore(CORRECT_BONUS);
+    } else {
+      timeLeft-=10;
     }
    //apply the class
    selectedChoice.parentElement.classList.add(classToApply);

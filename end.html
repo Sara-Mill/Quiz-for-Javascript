@@ -4,29 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Congrats!</title>
-  <link rel = "stylesheet" href="style.css" />
+  <title>Finished!</title>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div id="end" class="flex-center flex-comlun">
-     <h1>All done!</h1>
-     <p>Your final score is: 
-
-     </p>
-     <form>
-      <input
-      type="text"
-      name="username"
-      id="username"
-      placeholder="username"
-      />
-      <button type = "submit" class="btn" id="saveScoreBtn" href = "highscores.html" onclick="saveHighScore(event)"
-      disabled
-      >Save</button>
-     </form>
-    <a class="btn" href="game.html">Play Again</a>
-    <a class="btn" href="index.html">Go Home</a>
+  <div class ="container">
+    <div id = "end" class = "flex-center flex-column">
+      <h1 id="finalScore"></h1>
+      <form>
+        <input type="text"
+        name="username"
+        id="username"
+        placeholder="enter name to save score"
+        />
+        <button 
+        type = "submit" 
+        class="btn" 
+        id="saveScoreBtn" 
+        onclick="saveHighScore(event)"
+        disabled
+        >
+        Save</button>
+      </form>
+      <a class ="btn" href="game.html">Play Again</a>
+      <a class = "btn" href = "index.html">Go Home</a>
     </div>
   </div>
   <script src = "end.js"></script>
