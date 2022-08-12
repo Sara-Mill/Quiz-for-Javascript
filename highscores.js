@@ -6,7 +6,7 @@ console.log(highScores);
 
 highScoresList.innerHTML = highScores
 
-//get reference to each high score
+//get reference to each high score by creating a new array populated with the results of calling a function on every element in the calling array
 highScores.map(score => {
   console.log(score.name, score.mostRecentScore);
   return(score.name, score.mostRecentScore);
